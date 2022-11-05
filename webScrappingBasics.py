@@ -2,10 +2,10 @@ from bs4 import BeautifulSoup
 with open('pythonWebScrapping.html','r') as htmlfile:
     contents=htmlfile.read()
     soup =BeautifulSoup(contents,"lxml")
-    # print(soup.prettify())
+    print(soup.prettify())
     courses_html_tags=soup.find_all("h5")
-    # for courses in courses_html_tags:
-    #     print(courses.text)
+    for courses in courses_html_tags:
+        print(courses.text)
     course_cards=soup.find_all("div",class_="card")
     for course in course_cards:
         course_Name=course.h5.text
